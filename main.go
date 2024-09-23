@@ -23,7 +23,7 @@ func main() {
 		Logger.Errorf(ctx, "youtube init app err: %v", err)
 		return
 	}
-	err = twitter_share.InitAppV1(ctx)
+	err = twitter_share.InitAppV1()
 	if err != nil {
 		Logger.Errorf(ctx, "twitter init app err: %v", err)
 		return
