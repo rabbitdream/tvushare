@@ -1,0 +1,32 @@
+server:
+  service_name: "resource"
+  listen: 8090
+  https_listen: 10900
+  redirect_uri: "http://localhost:8090/social-accounts"
+  twitter_app_client_id: "bzNYcXk0RU1UMjRObUNYUFVwdWg6MTpjaQ"
+  twitter_app_auth_basic: "YnpOWWNYazBSVTFVTWpST2JVTllVRlZ3ZFdnNk1UcGphUTpZd2pRa2tCXzFZRlFRN25wSmJ5SmxNUWp5QkJqNHR0endQUGQ1cXJLZDh3di1Ja0QwUg=="
+  twitter_api_key: "IP6tw6RRI8BhcMxoPFINklMDm"
+  twitter_api_secret: "F4aHXqAkfgLsRdSb4ApusSmY5rN31xxpx1oRMF3F01F56Sedyc"
+
+database:
+  default:
+    type: "mysql"
+    link: "root:123456@tcp(10.12.23.151:3306)/tvushare"
+    debug: true
+    timezone: "utc"
+    maxIdle: "10"
+    maxOpen: "100"
+    maxLifetime: "30s"
+  logger:
+    path: "./bin/log/sql"
+    level: "all"
+    stdout: true
+
+logger:
+  path: "./bin/log/"             # 日志文件路径。默认为空，表示关闭，仅输出到终端
+  file: "{Y-m-d}.log"            # 日志文件格式。默认为"{Y-m-d}.log"
+  level: "all"                   # 日志输出级别
+  ctxKeys: ["TraceId"]           # 自定义Context上下文变量名称，自动打印Context的变量到日志中。默认为空
+  stdout: true                   # 日志是否同时输出到终端。默认true
+  stdoutColorDisabled: false # 是否关闭终端的颜色打印。默认否，表示终端的颜色输出。
+  writerColorEnable: true # 是否开启Writer的颜色打印。默认否，表示不输出颜色到自定义的Writer或者文件。

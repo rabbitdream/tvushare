@@ -1,0 +1,13 @@
+[gfcli]
+    [[gfcli.gen.dao]]
+    link   = "mysql:root:123456@tcp(10.12.23.151:3306)/tvushare"
+    tables = "oauth2_token"
+    jsonCase = "Snake"
+
+# 将此config.toml拷贝到，项目根目录下config目录
+# 生成哪个表的orm  就在tables后面填上表名，修改link
+# 在项目根目录下创建个临时目录./temp
+# 然后在项目根目录下终端输入命令（win系统），例如： > ./tool/gf gen dao -path ./temp
+# 然后将 ./temp/model/internal/export_long_task_list.go   拷贝到 ./model 下，修改 package model
+# 删除./temo临时目录
+# https://goframe.org/pages/viewpage.action?pageId=3673173
